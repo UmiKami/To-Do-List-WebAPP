@@ -8,6 +8,45 @@
     <title>To-Do List</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <main>
+        <div class="main-list">
+            <h1 class="main-list__header">My To-Do App</h1>
+
+            <div class="main-list__input">
+                <input type="text">
+                <button class="addBTN">
+                    <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25.5 17L2 3L6.5 17L2 31L25.5 17Z" fill="url(#paint0_linear_2_6)" stroke="#F8FFE5" stroke-width="2"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_2_6" x1="1.53796e-08" y1="14" x2="44" y2="13" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#7DDE92" stop-opacity="0.76"/>
+                        <stop offset="1" stop-color="#F8FFE5"/>
+                        </linearGradient>
+                        </defs>
+                    </svg>    
+                </button>
+            </div>
+
+
+            <div class="main-list__task">
+                <label class="main-list__task-left">
+                    <span class="main-list__task-text">This is just a sample text.</span>
+                    <input type="checkbox" class="main-list__task-left-checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="main-list__task-right">
+                    <button class="main-list__task-closeBTN">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="1.58579" y1="24.2419" x2="24.2419" y2="1.58579" stroke="#7DDE92" stroke-width="4"/>
+                            <line x1="24.2419" y1="24.0703" x2="1.58581" y2="1.41422" stroke="#7DDE92" stroke-width="4"/>
+                        </svg>  
+                    </button>  
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- scripts -->
+    <script src="./app.js"></script>
 </body>
 </html>

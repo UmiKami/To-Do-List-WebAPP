@@ -1,4 +1,227 @@
-h1 {
-  background-color: #d1ff2c;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+:root {
+  --task-text: var(--task-unchecked-text);
+  --task-checked-text: #b3ff98;
+  --task-unchecked-text: #f8ffe5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #7dde92;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4rem;
+}
+
+.main-list {
+  min-width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-list__header {
+  margin-bottom: 4rem;
+  font-size: 4.5rem;
+  color: #2ebfa5;
+}
+
+.main-list__input {
+  margin-bottom: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 5px;
+  width: 60%;
+}
+
+.main-list__input input {
+  width: 100%;
+  height: 49px;
+  border-radius: 5px;
+  background: #f8ffe5;
+  border: 2px solid #2ebfa5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: #2ebfa5;
+  padding: 0.5rem 0.8rem;
+}
+
+.main-list__input input:focus {
+  outline: none;
+}
+
+.main-list__input .addBTN {
+  width: 49px;
+  height: 49px;
+  background: linear-gradient(237.8deg, #2ebfa5 9.46%, #7dde92 80.28%);
+  border: 2px solid rgba(248, 255, 229, 0.8);
+  border-radius: 5px;
+}
+
+.main-list__input .addBTN:hover {
+  cursor: pointer;
+}
+
+.main-list__task {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 1rem;
+  padding-left: 4.5rem;
+  /* Rectangle 3 */
+  width: 60%;
+  min-height: 49px;
+  border-radius: 5px;
+  background: #2ebfa5;
+}
+
+.main-list__task-left-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.main-list__task-left .checkmark {
+  position: absolute;
+  top: 25%;
+  left: 1.5%;
+  height: 25px;
+  width: 25px;
+  background: #2ebfa5;
+  border: 2px solid #f8ffe5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.main-list__task-left .checkmark:hover {
+  cursor: pointer;
+  background-color: #88ddbf;
+}
+
+.main-list__task-left .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.main-list__task-left input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.main-list__task-left .checkmark:after {
+  /* Vector 2 */
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid #b3ff98;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+.main-list__task-left input:checked ~ .checkmark {
+  background-color: #2e4ebf;
+  border-color: #B3FF98;
+}
+
+.main-list__task-text {
+  /* This is just an example text */
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 28px;
+  color: var(--task-text);
+}
+
+.main-list__task-closeBTN {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.task-checked {
+  background-color: #2e4ebf;
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-list {
+    min-width: 90%;
+  }
+  .main-list__input {
+    width: 80%;
+  }
+  .main-list__task {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-list {
+    min-width: 100%;
+  }
+  .main-list__header {
+    width: 100%;
+    text-align: center;
+  }
+  .main-list__input {
+    width: 95%;
+  }
+  .main-list__task {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-list__input {
+    width: 100%;
+  }
+  .main-list__task {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

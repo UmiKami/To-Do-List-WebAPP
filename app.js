@@ -1,0 +1,1 @@
+let userTaskText = document.querySelector(".main-list__task-text")
